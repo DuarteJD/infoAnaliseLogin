@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {WebView} from 'react-native-webview';
+import LottieView from 'lottie-react-native';
 import {
   SafeAreaView,
   View,
@@ -79,11 +80,11 @@ export default class Home extends Component {
           ref={this.webViewRef}
           startInLoadingState={true}
           renderLoading={() => (
-            <>
-              <View>
-                <Text>Carregando</Text>
-              </View>
-            </>
+            <LottieView
+              source={require('../assets/9811-loading.json')}
+              autoPlay
+              loop
+            />
           )}
           originWhitelist={['*']}
           onNavigationStateChange={this.onNavigationStateChange.bind(this)}
